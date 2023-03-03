@@ -2,10 +2,9 @@ class Node:
     def __init__(self, data, next_node=None):
         """Класс активации узла"""
         self.data = data
-        self.next_node = next_node
+        self.next_node = next_node #ссылка на следующий узел
 
 class Stack:
-
     def __init__(self):
         '''Инициализация пустого стэка'''
         self.top = None
@@ -16,19 +15,34 @@ class Stack:
         new_node.next_node = self.top
         self.top = new_node
 
-n1 = Node(5, None)
-n2 = Node('a', n1)
-print(n1.data) #5
-print(n2.data) #a
-print(n1)
-print(n2.next_node)
+    def pop(self):
+        pop_node = self.top
+        pop_data = pop_node.data
+        self.top = pop_node.next_node
+        return pop_data
+
+stack = Stack()
+stack.push('data1')
+data = stack.pop()
+
+# стэк стал пустой
+print(stack.top)
+None
+
+# pop() удаляет элемент и возвращает данные удаленного элемента
+print(data)
+'data1'
+
 
 stack = Stack()
 stack.push('data1')
 stack.push('data2')
-stack.push('data3')
-print(stack.top.data)
-print(stack.top.next_node.data)
-print(stack.top.next_node.next_node.data)
-print(stack.top.next_node.next_node.next_node)
+data = stack.pop()
 
+# теперь последний элемента содержит данные data1
+print(stack.top.data)
+'data1'
+
+# данные удаленного элемента
+print(data)
+'data2'
