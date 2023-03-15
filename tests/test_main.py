@@ -8,6 +8,7 @@ class TestNode(unittest.TestCase):
         stack.push('data2')
         self.assertEqual(stack.top.data, 'data2')
         self.assertEqual(stack.pop(), 'data2')
+        #
     def test_Queue(self):
         queue = Queue()
         queue.enqueue('data1')

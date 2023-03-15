@@ -32,7 +32,7 @@ queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
 
-print(queue.dequeue()) # data1.
-print(queue.dequeue()) # data2.
-print(queue.dequeue()) # data3
-print(queue.dequeue()) # None
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
