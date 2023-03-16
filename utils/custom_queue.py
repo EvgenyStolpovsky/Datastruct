@@ -1,38 +1,52 @@
 class Node:
+
     def __init__(self, data, next_node=None):
-        """Класс активации узла"""
         self.data = data
-        self.next_node = next_node #ссылка на следующий узел
-class Queue:
-    def __init__(self, head=None, tail=None):
-        self.head = head
-        self.tail = tail
-    def enqueue(self, data):
-        """Добавление данных в очередь"""
+        self.next_node = next_node
+
+
+class LinkedList():
+    def __init__(self, begin=None, end=None):
+        self.begin = begin
+        self.end = end
+
+    def insert_beginning(self, data):
         new_node = Node(data)
-        if self.head == None:
-            self.head = new_node
-            self.tail = new_node
+        if self.begin == None:
+            self.begin = new_node
         else:
-            self.tail.next_node = new_node
-            self.tail = new_node
+            new_node.next_node = self.begin
+            self.begin = new_node
+        if self.end == None:
+            self.end = new_node
 
-    def dequeue(self):
-        """Удаляет из очереди крайний левый элемент"""
-        deqeueued_node = self.head
-        if self.head == None:
-            return None
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.end == None:
+            self.end = new_node
         else:
-            self.head = self.head.next_node
-            return deqeueued_node.data
+            self.end.next_node = new_node
+            self.end = new_node
+        if self.begin == None:
+            self.begin = new_node
 
+    def print_ll(self):
+        ll_string = ''
+        node = self.begin
+        if node is None:
+            print(None)
+        while node:
+            ll_string += f' {str(node.data)} ->'
+            node = node.next_node
 
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
+        ll_string += ' None'
+        print(ll_string)
 
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
+# С пятой домашки.
+ll = LinkedList()
+ll.insert_beginning({'id': 1})
+ll.insert_at_end({'id': 2})
+ll.insert_at_end({'id': 3})
+ll.insert_beginning({'id': 0})
+ll.print_ll()
+#  {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
