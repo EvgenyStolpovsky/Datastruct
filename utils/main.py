@@ -21,24 +21,24 @@ class Stack:
         self.top = pop_node.next_node
         return pop_data
 
+
 stack = Stack()
 stack.push('data1')
 data = stack.pop()
 
 # стэк стал пустой
-print(stack.top)
-None
+print(stack.top)  # None
 
-print(data)
-# 'data1'
-
+# pop() удаляет элемент и возвращает данные удаленного элемента
+print(data)  # 'data1'
 
 stack = Stack()
 stack.push('data1')
 stack.push('data2')
 data = stack.pop()
 
-print(stack.top.data)
-# 'data1'
-print(data)
-# 'data2'
+# теперь последний элемента содержит данные data1
+print(stack.top.data)  # 'data1'
+
+# данные удаленного элемента
+print(data)  # 'data2'

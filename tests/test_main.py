@@ -1,6 +1,7 @@
 import unittest
-from utils.task import Stack
-from utils.custom_queue import Queue, LinkedList
+from utils.main import Stack
+from utils.custom_queue import Queue
+from utils.linked_list import LinkedList
 
 class TestNode(unittest.TestCase):
     def test_Stack(self):
