@@ -3,6 +3,7 @@ class Node:
         """Класс активации узла"""
         self.data = data
         self.next_node = next_node #ссылка на следующий узел
+
 class Queue:
     def __init__(self, head=None, tail=None):
         self.head = head
@@ -32,7 +33,7 @@ queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
 
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
+print(queue.dequeue()) # data1.
+print(queue.dequeue()) # data2.
+print(queue.dequeue()) # data3
+print(queue.dequeue()) # None
