@@ -75,5 +75,3 @@ ll.insert_beginning({'id': 0})
 print(ll.to_list())
 user_data = ll.get_data_by_id(2)
 print(user_data)
-#[{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}]
-{'id': 2}

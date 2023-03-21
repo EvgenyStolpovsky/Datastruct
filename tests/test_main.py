@@ -27,3 +27,5 @@ class TestNode(unittest.TestCase):
         ll.insert_at_end({'id': 3})
         ll.insert_beginning({'id': 0})
         self.assertEqual(ll.print_ll(), None)
+        self.assertEqual(ll.to_list(), [{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}])
+        self.assertEqual(ll.get_data_by_id(2), {'id': 2})
